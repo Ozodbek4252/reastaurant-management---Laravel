@@ -23,7 +23,7 @@
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                             </ul>
-                            <img height="200" width="200" style="object-fit: cover; object-position: top;" src="chefimage/{{$data->image}}" alt="Chef #1">
+                            <img style="height: 370px; object-fit: cover; object-position: top;" height="370px" width="200" style="object-fit: cover; object-position: top;" src="chefimage/{{$data->image}}" alt="Chef #1">
                         </div>
                         <div class="down-content">
                             <h4>{{$data->name}}</h4>
