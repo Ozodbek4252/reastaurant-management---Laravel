@@ -24,14 +24,15 @@ Route::get('/updateview/{id}', [AdminController::class, "updateview"]);
 Route::post('/update/{id}', [AdminController::class, "update"]);
 Route::get('/foodmenu', [AdminController::class, "foodmenu"]);
 Route::post('/uploadfood', [AdminController::class, "upload"]);
-
-
 Route::get('/deleteuser/{id}', [AdminController::class, "deleteuser"]);
+
 Route::post('/reservation', [AdminController::class, "reservation"]);
 Route::get('/viewreservation', [AdminController::class, "viewreservation"]);
+
 Route::get('/viewchef', [AdminController::class, "viewchef"]);
 Route::post('/uploadchef', [AdminController::class, "uploadchef"]);
 
+Route::post('/addcart/{id}', [HomeController::class, "addcart"]);
 
 
 Route::get('/redirects', [HomeController::class, "redirects"]);
