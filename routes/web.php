@@ -34,10 +34,13 @@ Route::post('/uploadchef', [AdminController::class, "uploadchef"]);
 Route::get('/updatechef/{id}', [AdminController::class, "updatechef"]);
 Route::post('/updatefoodchef/{id}', [AdminController::class, "updatefoodchef"]);
 Route::get('/deletechef/{id}', [AdminController::class, "deletechef"]);
+Route::get('/orders', [AdminController::class, "orders"]);
+
 
 Route::post('/addcart/{id}', [HomeController::class, "addcart"]);
 Route::get('/showcart/{id}', [HomeController::class, "showcart"]);
 Route::get('/remove/{id}', [HomeController::class, "remove"]);
+Route::post('/orderconfirm', [HomeController::class, "orderconfirm"]);
 
 
 Route::get('/redirects', [HomeController::class, "redirects"]);
