@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\Food;
 use App\Models\Reservation;
 use App\Models\Foodchef;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 
 class AdminController extends Controller
@@ -109,10 +111,15 @@ class AdminController extends Controller
 
 
     public function viewreservation()
-    {
+    {   
+        $admin = User::where('usertype', '1')->get();
+        if(Auth::id()==intval($admin[0]->id)) {
         $data = reservation::all();
 
         return view("admin.adminreservation", compact("data"));
+        } else {
+            return redirect('login');
+        }
     }
 
 
@@ -180,9 +187,19 @@ class AdminController extends Controller
     }
 
     public function orders() {
+        $data = Order::all();
 
+        return view('admin.orders', compact('data'));
+    }
 
-        return view('admin.orders');
+    public function search(Request $request) {
+        $search = $request->search;
+
+        $data = Order::where('name','Like', '%'.$search.'%')
+                    ->orWhere('foodname','Like', '%'.$search.'%')
+                    ->get();
+
+        return view('admin.orders', compact('data'));
     }
 
 
